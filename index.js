@@ -24,7 +24,7 @@ const questions = () => {
       {
         type: 'input',
         name: 'description',
-        message: 'provide a desctipion of the purject (Required)',
+        message: 'provide a description of the project (Required)',
         validate: descriptionInput => {
             if (descriptionInput) {
                 return true
@@ -46,7 +46,7 @@ const questions = () => {
 
       {
         type: 'input',
-        name: 'Installation',
+        name: 'installation',
         message: 'Please provide the steps to install your project',
         validate: installationInput => {
            if (installationInput) {
@@ -60,14 +60,14 @@ const questions = () => {
 
       {
         type: 'input',
-        name: 'Usage',
+        name: 'usage',
         message: 'Please provide instructions and examples for use.',
         validate: usageInput => {
             if (usageInput) {
                 return true
             } else {
                 console.log('Please provide instructions and examples for use.')
-                return false
+                return ""
             }
         }
 
@@ -90,7 +90,7 @@ const questions = () => {
       {
         type: 'list',
         name: 'license',
-        choices: ['apache']
+        choices: ['Apache','MIT', 'Mozila']
 
       }
 ])};
