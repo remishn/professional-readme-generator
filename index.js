@@ -67,30 +67,24 @@ const questions = () => {
                 return true
             } else {
                 console.log('Please provide instructions and examples for use.')
-                return ""
+                return false
             }
         }
 
       },
 
       {
-        type: 'confirm',
-        name: 'confirmAbout',
-        message: 'Would you like to list your collaborators for a "Credits" section if any?',
-        default: true
-      },
-
-      {
         type: 'input',
         name: 'credits',
         message: 'list your collaborators with links to their GitHub profiles:',
-        when: ({confirmAbout}) => confirmAbout
+        defalult: false
       },
 
       {
         type: 'list',
         name: 'license',
-        choices: ['Apache','MIT', 'Mozila']
+        choices: ['Apache','MIT', 'Mozila'],
+        defalult: 'Apache'
 
       }
 ])};
@@ -107,9 +101,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
   const answers = await questions()
-  console.log('*** answers ***', answers)
   const readme = generateMarkdown(answers)
-  console.log('*** readme ***', readme)
   writeToFile('generated_readme.md', readme)
 }
 

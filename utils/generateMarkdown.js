@@ -19,7 +19,12 @@ function renderLicenseBadge(license) {
   return licenses[license].badge
 }
 
-// Create functions 
+// Create functions to display 
+// desctiption
+// installation
+// usage
+// credits
+// license
 function renderDescriptionSection (description) {
 
   return `# Description
