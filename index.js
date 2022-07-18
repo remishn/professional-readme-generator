@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+//  array of questions for user input
 const questions = () => {
     return inquirer.prompt([
 
@@ -36,14 +36,6 @@ const questions = () => {
 
       },
       
-      {
-        type: 'confirm',
-        name: 'confirmAddTable',
-        message: 'Would you like to add Table of Contents?',
-        default: true
-
-      },
-
       {
         type: 'input',
         name: 'installation',
@@ -89,7 +81,7 @@ const questions = () => {
       }
 ])};
 
-// TODO: Create a function to write README file
+//  function to write README file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, err => {
     if (err) {
@@ -98,7 +90,7 @@ function writeToFile(fileName, data) {
   } )
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
 async function init() {
   const answers = await questions()
   const readme = generateMarkdown(answers)
